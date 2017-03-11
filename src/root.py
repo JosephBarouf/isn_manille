@@ -1,19 +1,20 @@
 class root(object):
 	"""docstring for root"""
 	def __init__(self):
-		self.joueurs = []
-		r = 0
-		while(r!=1 and r!=2):
-			r = int(input("\
-=====================PyManille==========\n\
-1: Inscrire un joueur\n\
-2: Lister les joueurs\n"))
-		if(r == 1):
-			creerJoueur()
-		elif(r == 2):
-			self.listerJoueurs(self.joueurs)
+		self.compte = []
 
-	def listerJoueurs(self, joueurs):
-		if joueurs:
-			for joueur in joueurs:
-				print(joueur)
+	def listerCompte(self):
+		if self.compte:
+			print("\nVoici le nom des comptes crée(s):\n")
+			for compte in self.compte:
+				print("- " + compte)
+			print("\n\n")
+		else:
+			print("\nAucun compte n'existe\n")
+		
+
+	def creerCompte(self):
+		name = input("\n\
+Quel est le nom du joueur ?\n")
+		self.compte.append(name)
+		self.listerCompte()
