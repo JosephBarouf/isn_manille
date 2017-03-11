@@ -1,17 +1,19 @@
 class root(object):
 	"""docstring for root"""
-	joueurs = []
 	def __init__(self):
-		while(r != 1 || r != 2)
-			r = input("\
-				=====================PyManille==========\n\
-				1: Inscrire un joueur\n\
-				2: Lister les joueurs")
+		self.joueurs = []
+		r = 0
+		while(r!=1 and r!=2):
+			r = int(input("\
+=====================PyManille==========\n\
+1: Inscrire un joueur\n\
+2: Lister les joueurs\n"))
 		if(r == 1):
 			creerJoueur()
 		elif(r == 2):
-			listerJoueurs()
+			self.listerJoueurs(self.joueurs)
 
-	def listerJoueurs():
-		for joueur in joueurs:
-			print(joueur)
+	def listerJoueurs(self, joueurs):
+		if joueurs:
+			for joueur in joueurs:
+				print(joueur)
