@@ -6,8 +6,9 @@ carte_joueur3 = []
 carte_joueur4 =[]
 
 class JeuDeCarte : 
-	def __init__(self, nbr_joueur) :
+	def __init__(self, nbr_joueur, nbr_cartes = 32) :
 		self.nbr_joueur = nbr_joueur
+		self.nbr_cartes = nbr_cartes
 
 	def cartes(self) : 
 		As_coeur = Carte(valeur = 1, couleur = "coeur", nom = "As_coeur")
@@ -47,44 +48,112 @@ class JeuDeCarte :
 	def distribuer(self) :
 		l_cartes = self.cartes()
 		x = 0
+		i = 0
+		z = 0
+		if (self.nbr_joueur) > 2 :
+			while i < (self.nbr_cartes) : # correspond à la distribution équitable des 32 cartes
+				x = l_cartes.index(choice(l_cartes))
+				carte_joueur1.append(l_cartes[x])
+				i = i + 1
+				del l_cartes[x]
+				x = l_cartes.index(choice(l_cartes))
+				carte_joueur2.append(l_cartes[x])
+				i = i + 1
+				del l_cartes[x]
+				x = l_cartes.index(choice(l_cartes))
+				carte_joueur3.append(l_cartes[x])
+				i = i + 1
+				del l_cartes[x]
+				x = l_cartes.index(choice(l_cartes))
+				carte_joueur4.append(l_cartes[x])
+				i = i + 1
+				del l_cartes[x]
+			while z < (self.nbr_joueur) :
+				print("Main joueur 1 : ")
+				for k in carte_joueur1 :
+					print(k.nom)
+				z = z + 1
+				print("Main joueur 2 : ")
+				for k in carte_joueur2 :
+					print(k.nom)
+				z = z + 1
+				print("Main joueur 3")
+				for k in carte_joueur3 :
+					print(k.nom)
+				z = z + 1
+				print("Main joueur 4")
+				for k in carte_joueur4 :
+					print(k.nom)
+				z = z + 1
+		else : 
+			while i < self.nbr_cartes : # correspond à la distribution équitable des 32 cartes
+				x = l_cartes.index(choice(l_cartes))
+				carte_joueur1.append(l_cartes[x])
+				i = i + 1
+				del l_cartes[x]
+				x = l_cartes.index(choice(l_cartes))
+				carte_joueur2.append(l_cartes[x])
+				i = i + 1
+				del l_cartes[x]
+			while z < (self.nbr_joueur) :
+				print("Main joueur 1 : ")
+				for k in carte_joueur1 :
+					print(k.nom)
+				z = z + 1
+				print("Main joueur 2 : ")
+				for k in carte_joueur2 :
+					print(k .nom)
+				z = z + 1
+manche1 = JeuDeCarte(nbr_joueur = 2)
+manche1.distribuer()
+
+"""l_cartes = self.cartes()
+		x = 0
 		if (self.nbr_joueur) == 4 :
 			while  len(carte_joueur1) - 1 < (len(l_cartes))/(4) :
 				x = l_cartes.index(choice(l_cartes))
 				carte_joueur1.append(l_cartes[x])
 				del l_cartes[x]
-			print("Main joueur 1 {0}".format(carte_joueur1))
+			print("Main Joueur 1 : ")
+			for i in carte_joueur1 :
+				print(i.nom)
 
-			while len(carte_joueur2) - 1 < (len(l_cartes))/(4) :
+			while len(carte_joueur2) < (len(l_cartes))/(4) :
 				x = l_cartes.index(choice(l_cartes))
 				carte_joueur2.append(l_cartes[x])
 				del l_cartes[x]
-			print("Main joueur 2 {0}".format(carte_joueur2))
-			while  len(carte_joueur3) - 1 < (len(l_cartes))/(4) :
+			print("Main Joueur 2 : ")
+			for i in carte_joueur2 :
+					print(i.nom)
+			while  len(carte_joueur3) < (len(l_cartes))/(4) :
 				x = l_cartes.index(choice(l_cartes))
 				carte_joueur3.append(l_cartes[x])
 				del l_cartes[x]
-			print("Main joueur 3 {0}".format(carte_joueur3))
-			while len(carte_joueur4) - 1 < (len(l_cartes))/(4) :
+			print("Main Joueur 3 : ")
+			for i in carte_joueur3 :
+					print(i.nom)
+			while len(carte_joueur4) < (len(l_cartes))/(4) :
 				x = l_cartes.index(choice(l_cartes))
 				carte_joueur4.append(l_cartes[x])
 				del l_cartes[x]
-			print("Main joueur 4 {0}".format(carte_joueur4))
+			print("Main Joueur 4 : ")
+			for i in carte_joueur4 :
+					print(i.nom)
 		else : 
 			while  len(carte_joueur1) - 1 < (len(l_cartes))/(2) :
 				x = l_cartes.index(choice(l_cartes))
 				carte_joueur1.append(l_cartes[x])
 				del l_cartes[x]
-			print("Main joueur 1 {0}".format(carte_joueur1))
-
+			print("Main Joueur 1")
+			for i in carte_joueur1 :
+					print(i.nom)
 			while len(carte_joueur2) - 1 < (len(l_cartes))/(2) :
 				x = l_cartes.index(choice(l_cartes))
 				carte_joueur2.append(l_cartes[x])
 				del l_cartes[x]
-			print("Main joueur 2 {0}".format(carte_joueur2))
-
-manche1 = JeuDeCarte(nbr_joueur = 4)
-manche1.distribuer()
-			
+			print("Main Joueur 2")
+			for i in carte_joueur2 :
+					print(i.nom)"""
 
 
 
