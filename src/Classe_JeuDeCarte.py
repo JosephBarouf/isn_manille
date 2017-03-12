@@ -1,3 +1,16 @@
+#-------------------------------------------------------------------------------
+# Name:        Classe_JeuDeCarte.py
+# Purpose:
+#
+# Author:		Joseph Petit
+#
+# Created:     12/03/2017
+# Copyright:
+# Licence:
+#-------------------------------------------------------------------------------
+
+
+
 from random import choice
 from ClasseCarte import Carte
 carte_joueur1 = []
@@ -6,11 +19,16 @@ carte_joueur3 = []
 carte_joueur4 =[]
 
 class JeuDeCarte : 
-	def __init__(self, nbr_joueur, nbr_cartes = 32) :
+	"""Definition de la classe JeuDeCarte"""
+
+	def __init__(self, nbr_joueur, nbr_cartes = 32, atout) :
+		"""Initialisation de la classe JeuDeCarte"""
 		self.nbr_joueur = nbr_joueur
 		self.nbr_cartes = nbr_cartes
+		self.atout = atout
 
 	def cartes(self) : 
+		"""Répertorie toute les cartes du jeu et les stocke dnas une liste"""
 		As_coeur = Carte(valeur = 1, couleur = "coeur", nom = "As_coeur")
 		Roi_coeur = Carte(valeur = 13, couleur = "coeur", nom = "Roi_coeur")
 		Dame_coeur = Carte(valeur = 12, couleur = "coeur", nom = "Dame_coeur")
@@ -45,13 +63,14 @@ class JeuDeCarte :
 		sept_pique = Carte(valeur = 7, couleur = "pique", nom = "Sept_pique")
 		cartes = [As_coeur, Roi_coeur, Dame_coeur, Valet_coeur, dix_coeur, neuf_coeur, huit_coeur, sept_coeur,As_carreau, Roi_carreau, Dame_carreau, Valet_carreau, dix_carreau, neuf_carreau, huit_carreau,sept_carreau,As_trefle, Roi_trefle, Dame_trefle, Valet_trefle, dix_trefle, neuf_trefle, huit_trefle,sept_trefle,As_pique, Roi_pique, Dame_pique, Valet_pique, dix_pique, neuf_pique, huit_pique, sept_pique]
 		return cartes
-	def distribuer(self) :
+	def distribuer(self) : 
+		"""Distibue équitablement les cartes entre chaque joueur"""
 		l_cartes = self.cartes()
-		x = 0
-		i = 0
-		z = 0
+		x = 0 #variable permettant de choisir une carte aléatoirement dans l_cartes
+		i = 0 #Compte le nombre de cartes distribuées
+		z = 0 #Variable comptant le nombre de joueur servi
 		if (self.nbr_joueur) > 2 :
-			while i < (self.nbr_cartes) : # correspond à la distribution équitable des 32 cartes
+			while i < (self.nbr_cartes) : #Boucle jusqu'à ce que le paquet soit vide
 				x = l_cartes.index(choice(l_cartes))
 				carte_joueur1.append(l_cartes[x])
 				i = i + 1
@@ -68,7 +87,7 @@ class JeuDeCarte :
 				carte_joueur4.append(l_cartes[x])
 				i = i + 1
 				del l_cartes[x]
-			while z < (self.nbr_joueur) :
+			while z < (self.nbr_joueur) : #Boucle jusqu'à ce que tout les joueurs puissent voir leur main
 				print("Main joueur 1 : ")
 				for k in carte_joueur1 :
 					print(k.nom)
@@ -86,7 +105,7 @@ class JeuDeCarte :
 					print(k.nom)
 				z = z + 1
 		else : 
-			while i < self.nbr_cartes : # correspond à la distribution équitable des 32 cartes
+			while i < self.nbr_cartes : #Boucle jusqu'à ce que le paquet soit vide
 				x = l_cartes.index(choice(l_cartes))
 				carte_joueur1.append(l_cartes[x])
 				i = i + 1
@@ -95,7 +114,7 @@ class JeuDeCarte :
 				carte_joueur2.append(l_cartes[x])
 				i = i + 1
 				del l_cartes[x]
-			while z < (self.nbr_joueur) :
+			while z < (self.nbr_joueur) : #Boucle jusqu'à ce que tout les joueurs puissent voir leur main
 				print("Main joueur 1 : ")
 				for k in carte_joueur1 :
 					print(k.nom)
@@ -104,8 +123,10 @@ class JeuDeCarte :
 				for k in carte_joueur2 :
 					print(k .nom)
 				z = z + 1
-manche1 = JeuDeCarte(nbr_joueur = 2)
-manche1.distribuer()
+	def atout () : 
+		"""Permet d'attribuer les caractéristiques des cartes de la couleur de l'atout"""
+
+
 
 """l_cartes = self.cartes()
 		x = 0
