@@ -9,10 +9,8 @@
 # Licence:
 #-------------------------------------------------------------------------------
 
-
-
 from random import choice
-from ClasseCarte import Carte
+from Classe_Carte import Carte
 carte_joueur1 = []
 carte_joueur2 =[]
 carte_joueur3 = []
@@ -20,8 +18,7 @@ carte_joueur4 =[]
 
 class JeuDeCarte : 
 	"""Definition de la classe JeuDeCarte"""
-
-	def __init__(self, nbr_joueur, nbr_cartes = 32, atout) :
+	def __init__(self, nbr_joueur, nbr_cartes = 32, atout = "coeur") :
 		"""Initialisation de la classe JeuDeCarte"""
 		self.nbr_joueur = nbr_joueur
 		self.nbr_cartes = nbr_cartes
@@ -123,10 +120,10 @@ class JeuDeCarte :
 				for k in carte_joueur2 :
 					print(k .nom)
 				z = z + 1
-	def atout () : 
+	def atout (self) : 
 		"""Permet d'attribuer les caractéristiques des cartes de la couleur de l'atout"""
-
-
+tour1 = JeuDeCarte(nbr_joueur = 2)
+tour1.distribuer()
 
 """l_cartes = self.cartes()
 		x = 0
