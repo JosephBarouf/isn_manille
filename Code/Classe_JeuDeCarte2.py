@@ -97,7 +97,7 @@ class JeuDeCarte :
 			carte_show_joueur2.append(l_cartes[x])
 			k = k + 1
 			del l_cartes[x]
-		while z < 2 : #Boucle jusqu'à ce que tout les joueurs puissent voir leur main
+		"""while z < 2 : #Boucle jusqu'à ce que tout les joueurs puissent voir leur main
 			print("Carte main joueur 1 : ")
 			for l in carte_main_joueur1 :
 				print(l.nom)
@@ -121,7 +121,7 @@ class JeuDeCarte :
 			print("Carte hide joueur 2 : ")
 			for l in carte_hide_joueur2 :
 				print(l.nom)
-			z = z + 1
+			z = z + 1"""
 	def atout (self) : 
 		"""Permet d'attribuer les caractéristiques des cartes de la couleur de l'atout"""
 
