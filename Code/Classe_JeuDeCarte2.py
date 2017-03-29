@@ -79,6 +79,10 @@ class JeuDeCarte :
 			carte_main_joueur2.append(l_cartes[x])
 			i = i + 1
 			del l_cartes[x]
+		a_carte_main1 = Joueur()
+		a_carte_main1.afficherCarteMainJoueur(carte_main_joueur1) # pas le temps mais faut répeter cette action à la place du print
+
+
 		while j < 8 :  #Boucle jusqu'à ce que chaque joueur est 4 cartes caché face à lui
 			x = l_cartes.index(choice(l_cartes))
 			carte_hide_joueur1.append(l_cartes[x])
@@ -122,12 +126,12 @@ class JeuDeCarte :
 			for l in carte_hide_joueur2 :
 				print(l.nom)
 			z = z + 1"""
-	def atout (self) : 
-		"""Permet d'attribuer les caractéristiques des cartes de la couleur de l'atout"""
+	"""def atout (self) : """
+"""Permet d'attribuer les caractéristiques des cartes de la couleur de l'atout"""
 
 
-tour1 = JeuDeCarte()
-tour1.distribuer()
+"""tour1 = JeuDeCarte()
+tour1.distribuer()"""
 
 
 
